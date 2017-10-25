@@ -1,0 +1,175 @@
+---
+title: "Intro to Git"
+author: "EHA Behavioral Risk Team" 
+date: October 25, 2017
+output:
+  ioslides_presentation:
+    fig_height: 7
+    fig_width: 7
+    highlight: tango
+    css: eha.css
+---
+
+<style>
+div#before-column p.forceBreak {
+    break-before: column;
+}
+div#after-column p.forceBreak {
+    break-after: column;
+}
+</style>
+
+## Why Use Git? 
+- For **version control** 
+    - track changes in code 
+    - revert to old versions when you commit a terrible error
+- To avoid this: 
+<center>
+<img src="figs/filenames.gif", width = 462, height = 372></img>
+</center>
+
+## Why Use Github?
+
+- To share data and code across teams 
+
+- To track and merge changes in code from multiple collaborators on a project 
+
+## Why People DON'T Use Git
+
+- You (and your team) already a versioning system already set up.
+
+- You typically work on analyses (or large chunks of analyses) by yourself. 
+
+- Git co-opts regular words (fork, tree, push, commit) and assigns them *extremely* Git-specific definitions that are tremendously easy to confuse until you get the hang of it. 
+
+
+## Getting Started: register on Github.com 
+
+- Use your work email address (you can add a personal one later if you like) and register for a *public* (free) account 
+
+- Send your Github username to Noam [ross@ecohealthalliance.org](ross@ecohealthalliance.org) or Toph [allen@ecohealthalliance.org](allen@ecohealthalliance.org) so they can add you to the EHA organizational Github 
+
+- EHA-hosted files can be PRIVATE to the organization. Any data or code that you host on your personal Github.com site will be public. 
+
+## Git terminology 
+- `tree`: a directory or folder of files. trees can have multiple branches. - `branch`: a version of the tree. You can make a new branch if you want to test out changes in a file, but don’t want to alter the original. Changes can then be merged back into the master branch, so you don’t have to keep making new versions of things. 
+- `master` or `master branch`: the main version of the tree. Sometimes, you can do an entire project and never leave the master branch.  
+
+## Git terminology 
+- `repo` or `repository`: a file directory hosted on Github. This should include everything you need for a project - raw data, code/scripts, intermediate files, etc. 
+- `remote`: an external place that holds your tree. For us, the remote will be a path to a Github repo, e.g. [https://github.com/ecohealthalliance/china-niaid](https://github.com/ecohealthalliance/china-niaid)
+- `origin`: The default upstream branch. 
+
+# Practice! 
+
+## Practice! 
+
+## Find the command line {.smaller .columns-2}
+
+- In Mac: `cmnd` + `space`, type "terminal", hit Enter
+
+
+<img src="figs/terminal1.png", width = 350, height = 220, border = 1></img>
+
+<p class="forceBreak"></p>
+
+<br>
+
+- In Windows: open the start menu and type "cmd" or "command." Click the Command Prompt. 
+
+<img src="figs/win-cmd.png", width = 350, height = 250></img>
+
+
+</center>
+
+## Navigate the command line to where you want it wind
+
+- In terminal, your prompt will be something like `Brookes-MacBook-Air:Dropbox (EHA) Watson$`
+- typing `pwd` at the command line `p`rints your `w`orking `d`irectory 
+- `cd <path>` `c`hanges your working `d`irectory to `<path>`
+- When you `clone` the git repository, git will download all the files in that repo into your current working directory - basically copying that folder into your home computer 
+
+## Fork someone else's repo 
+
+![](figs/fork.png)
+
+- This makes a local copy of someone else's project so you can make changes without altering their original. 
+- You may not do this often. For example, if you're working by yourself, or if you have contributor privileges to a project, you'll go straight to `cloning`. 
+- Forks of private repos *stay private.*
+- Fork [https://github.com/brooke-watson/intro-to-git.](https://github.com/brooke-watson/intro-to-git) now. 
+
+## Clone a repo 
+
+- Go to YOUR copy of the repo: [https://github.com/YOUR-USERNAME/intro-to-git](https://github.com/YOUR-USERNAME/intro-to-git). 
+- Click the "Clone or Download" button and copy the link. 
+- Go back to your command line, and `cd` into the directory where you want this to live. 
+- `git clone <paste your link here>`. 
+- Your files are there! 
+- Check your status with `git status`
+    - Should see `"On Branch Master" "Your branch is up-to-date with 'origin/master’"`
+
+## Create a branch 
+
+- Create and checkout a branch to work from: 
+	- `git checkout -b <branch_name>` 
+	- EX: `git checkout -b myname-branch`
+
+## Make a change and check your status 
+
+- Change anything you want about the directory: 
+    - Using the command line 
+        - `mkdir oh-boy-a-new-folder` 
+        - `touch wow-what-a-new-text-file.txt` 
+    - Or, add/edit the folder interactively, the way you normally would. 
+        - e.g.: Download your favorite .gif or picture, and move it to `intro-to-git/figs`. 
+- `ls` to list the files in the directory - you should see your changes 
+- `git status` again to see the changes as "uncommited"
+
+# Tips for the future 
+
+## Don't accidentally make (y)our private research data public! {.columns-2}
+
+### Start Here 
+<img src="figs/new-github.png", width = 375, height = 250, border = 1></img>
+
+<br><br>
+
+
+### Not here
+<img src="figs/no-github.png", width = 375, height = 250></img>
+<br>
+  
+... when creating a new repository. 
+  
+## Resources 
+
+- [https://www.git-tower.com/blog/git-cheat-sheet](https://www.git-tower.com/blog/git-cheat-sheet)
+
+- [http://happygitwithr.com/](http://happygitwithr.com/)
+
+- Noam's reproducibility document: [https://github.com/ecohealthalliance/eha-reproducibility](https://github.com/ecohealthalliance/eha-reproducibility)
+
+- Terminal cheat sheet: 
+[https://github.com/0nn0/terminal-mac-cheatsheet](https://github.com/0nn0/terminal-mac-cheatsheet)
+
+- Command line cheat sheet: 
+[https://www.git-tower.com/blog/command-line-cheat-sheet/](https://www.git-tower.com/blog/command-line-cheat-sheet/)is 
+
+## Don't forget the Golden Rule of Git
+<center>
+![](figs/git-xkcd.png)
+
+# Thank you!  
+
+## test 
+
+<div id="left">
+  - mic check
+</div>
+
+<div id="right">
+  - 1 
+  - 2
+  - 1
+  - 2
+</div>
