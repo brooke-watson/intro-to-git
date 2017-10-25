@@ -34,6 +34,9 @@ div#after-column p.forceBreak {
 
 - To track and merge changes in code from multiple collaborators on a project 
 
+<center>
+<img src="figs/gitflow.png", width = 605, height = 370>
+</center>
 <!---
 ## Barriers to entry 
 
@@ -52,15 +55,25 @@ div#after-column p.forceBreak {
 
 - EHA-hosted files can be PRIVATE to the organization. Any data or code that you host on your personal Github.com site will be public. 
 
-## Git terminology 
+## Git terminology {.columns-2}
 
 - `tree`: a directory or folder of files. trees can have multiple branches.
-- `branch`: a version of the tree. You can make a new branch if you want to test out changes in a file, but don’t want to alter the original. Changes can then be merged back into the master branch, so you don’t have to keep making new versions of things. 
-- `master` or `master branch`: the main version of the tree. Sometimes, you can do an entire project and never leave the master branch.  
+- `branch`: a version of the tree. You can make a new branch if you want to test out changes in a file, but don’t want to alter the original.  
+- `master` or `master branch`: the trunk of the tree. 
+
+<br>
+
+<p class="forceBreak"></p>
+
+
+
+<img src="figs/gittree.png", width = 300, height 390></img>
+
+
 
 ## Git terminology 
 - `repo` or `repository`: a file directory hosted on Github. This should include everything you need for a project - raw data, code/scripts, intermediate files, etc. 
-- `remote`: an external place that holds your tree. For us, the remote will be a path to a Github repo, e.g. [https://github.com/ecohealthalliance/china-niaid](https://github.com/ecohealthalliance/china-niaid)
+- `remote`: an external place that holds your tree. For us, the remote will be a path to a Github repo, e.g. [https://github.com/brooke-watson/intro-to-git](https://github.com/brooke-watson/intro-to-git)
 - `origin`: The default upstream branch. 
 
 ## Git verbs  {.smaller .columns-2}
@@ -69,7 +82,6 @@ div#after-column p.forceBreak {
 - `fork`: copy someone else's remote to your remote 
 - `clone`: copy a remote onto your computer 
 - `fetch`: update your clone from a remote that already exists
-    - note: I barely ever use this 
 - `pull`: fetch updates + check them out into your working directory 
     - if there are any conflicts between the remote and your local repository, pull will prompt you to `merge` 
 
@@ -90,7 +102,7 @@ div#after-column p.forceBreak {
 - Remote = Github 
 - Repository = Git = your local record of `commit`ted saves 
 - Workspace = The regular-degular-schmegular files you work on. 
-- Index = Honestly, who knows. You have to `git add` before you can `git commit`. Just remember that and keep it moving.
+- Index = Staging area where you can look at the changes you've made before you commit them. (R Studio has a nice GUI for looking at `git diff`s).
 
 # Practice! 
 
@@ -99,15 +111,16 @@ div#after-column p.forceBreak {
 - In Mac: `cmnd` + `space`, type "terminal", hit Enter
 
 
-<img src="figs/terminal1.png", width = 350, height = 220, border = 1></img>
+<img src="figs/terminal1.png", width = 373, height = 172, border = 1></img>
 
+<br>
 <p class="forceBreak"></p>
-
+<br>
 <br>
 
 - In Windows: open the start menu and type "cmd" or "command." Click the Command Prompt. 
 
-<img src="figs/win-cmd.png", width = 350, height = 250></img>
+<img src="figs/win-cmd.png", width = 340, height = 245></img>
 
 
 </center>
@@ -135,6 +148,7 @@ div#after-column p.forceBreak {
 - Go back to your command line, and `cd` into the directory where you want this to live. 
 - `git clone <paste your link here>`. 
 - Your files are there! 
+- `cd intro-to-git` to get inside the folder
 - Check your status with `git status`
     - Should see `"On Branch Master" "Your branch is up-to-date with 'origin/master’"`
 
@@ -187,7 +201,7 @@ You should see something like this:
 
 
 
-# Tips for the future 
+# Tips 
 
 ## Don't accidentally make (y)our private research data public! {.columns-2}
 
@@ -203,11 +217,13 @@ You should see something like this:
   
 ... when creating a new repository. 
   
-# On finding help 
+## Tips 
 
 - When you get stuck, do your Googles.
-- If you do things in the right order, 95% of what you want to accomplish can be done with about 6 codes. 
-- in order: pull, checkout, 
+- If you do things in the right order, most of what you want to accomplish can be done with about 7 commands (`clone, pull, checkout, status, add, commit, push`). 
+- Always `git pull` before committing and pushing.
+- If you get really stuck, save your folder in a new location, delete the whole thing, and re-clone from Github.
+    - This is the Github equivalent of "turning it off and turning it back on."  
 
 ## Don't forget the Golden Rule
 <center>

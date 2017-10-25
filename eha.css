@@ -3,6 +3,11 @@ body {
     color: rgb(0, 0, 0);
 }
 
+text {
+    font-family: Avenir, helvetica, sans-serif;
+    color: rgb(0, 0, 0);
+}
+
 
 h1 {
     color: rgb(121, 187, 5);
