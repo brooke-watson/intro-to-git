@@ -122,8 +122,21 @@ div#after-column p.forceBreak {
         - `touch wow-what-a-new-text-file.txt` 
     - Or, add/edit the folder interactively, the way you normally would. 
         - e.g.: Download your favorite .gif or picture, and move it to `intro-to-git/figs`. 
-- `ls` to list the files in the directory - you should see your changes 
-- `git status` again to see the changes as "uncommited"
+- `git status` again to see your changes. 
+
+## Make a change and check your status 
+
+You might see something like this: 
+
+![](figs/status.png)
+
+<br>
+
+## Pause because really: what a good gif.
+
+![](figs/dwight-howard-cookie-challenge.gif)
+
+<br>
 
 # Tips for the future 
 
