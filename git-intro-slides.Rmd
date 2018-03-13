@@ -44,7 +44,7 @@ body p {
 <center>
 <img src="figs/gitflow.png", width = 605, height = 370>
 </center>
-<!---
+
 ## Barriers to entry 
 
 - You (and your team) already have a versioning system already set up.
@@ -52,7 +52,7 @@ body p {
 - You typically work on analyses (or large chunks of analyses) by yourself. 
 
 - Git co-opts regular words (fork, tree, push, commit) and assigns them *extremely* Git-specific definitions that are tremendously easy to confuse until you get the hang of it. 
---->
+
 
 ## Getting Started: register on Github.com 
 
