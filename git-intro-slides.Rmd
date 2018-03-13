@@ -19,6 +19,13 @@ div#after-column p.forceBreak {
 }
 </style>
 
+<!--- <style type="text/css">
+body p {
+  color: #000000;
+}
+</style>
+---> 
+
 ## Why Use Git? 
 - For **version control** 
     - track changes in code 
@@ -149,23 +156,27 @@ div#after-column p.forceBreak {
 - `git clone <paste your link here>`. 
 - Your files are there! 
 - `cd intro-to-git` to get inside the folder
+
+
+## Check status and create a branch 
+
 - Check your status with `git status`
     - Should see `"On Branch Master" "Your branch is up-to-date with 'origin/master’"`
-
-## Create a branch 
-
 - Create and checkout a branch to work from: 
 	- `git checkout -b <branch_name>` 
 	- EX: `git checkout -b myname-branch`
+	- `git status`
 
 ## Make a change and check your status 
 
 - Change anything you want about the directory: 
     - Using the command line 
-        - `mkdir oh-boy-a-new-folder` 
-        - `touch wow-what-a-new-text-file.txt` 
+        - e.g. `mkdir oh-boy-a-new-folder` 
+        - e.g. `touch wow-what-a-new-text-file.txt` 
+        
     - Or, add/edit the folder interactively, the way you normally would. 
         - e.g.: Download your favorite .gif or picture, and move it to `intro-to-git/figs`. 
+        
 - `git status` again to see your changes. 
 
 ## Make a change and check your status 
@@ -183,12 +194,25 @@ You should see something like this:
 ## Add (stage) changes and look at the differences 
 
 - Add file to changes that you want to “stage”: `git add <filename>` 
+    - e.g. (`git add 'figs/dwight-howard-cookie-challenge.gif'`)
 	- Sometimes you might use `git add . ` to add ALL untracked files - use with caution!! 
-	* can also use `git add *.Rmd` to add all the .Rmd files, for example 
-- `git diff —-cached`: (or `git diff` to see **before** you `git add` 
+	- can also use `git add *.Rmd` to add all the .Rmd files, for example 
+
+## Git diff 
+- `git diff —-cached` to see your changes 
+- It's easier to use a GUI to do this 
+- RStudio has a great one 
+- [happygitwithr.com/](happygitwithr.com) is very helpful if/when you want to use Git/Github from within RSTudio 
+    - Highly recommend if you are using R!! 
+    
+## Rstudio git diff GUI 
+
+<img src="figs/gitdiff.png", width = 700, height = 521></img>
+
 
 ## Commit your changes:
-- type `git commit -m "Hey this is my first commit”` 
+
+- type `git commit -m "Wow, we did it, what a commit”` 
 - don’t leave out the `-m`: just doing `git commit` will open a dreadful text editor that you’ll never escape.
     - Try to write a **useful** message that your collaborators (and/or Future You) might be able to understand
 
@@ -198,7 +222,15 @@ You should see something like this:
 - Check your remote: `git remote -v` (if you started by cloning a repo from GitHub, your origin should already be set)
 - Push your changes to the remote server: `git push <remote-name> <your-branch>` 
 	- e.g. `git push origin myname-branch`
+	- Check [github.com/YOUR-USERNAME/intro-to-git](github.com/YOUR-USERNAME/intro-to-git) to check that your changes are there 
+	- You did it! 
+	
+## Submit a pull request (PR)
 
+- Open the repo in GitHub and select your branch
+- You should see *"compare and pull request"*. This will bring up a summary of your changes and show you what branch you are merging.
+- Edit your message and click submit. Now you should see your pull request show up in the pull requests tab!
+    - In a real project your PR may be discussed and reviewed. Stakeholders may suggest changes or updates and (hopefully) eventually your code will be merged!
 
 
 # Tips 
@@ -231,16 +263,17 @@ You should see something like this:
 
 ## Resources 
 
-- [https://www.git-tower.com/blog/git-cheat-sheet](https://www.git-tower.com/blog/git-cheat-sheet)
-
-- [http://happygitwithr.com/](http://happygitwithr.com/)
-
-- Noam's reproducibility document: [https://github.com/ecohealthalliance/eha-reproducibility](https://github.com/ecohealthalliance/eha-reproducibility)
-
-- Terminal cheat sheet: 
-[https://github.com/0nn0/terminal-mac-cheatsheet](https://github.com/0nn0/terminal-mac-cheatsheet)
-
 - Command line cheat sheet: 
-[https://www.git-tower.com/blog/command-line-cheat-sheet/](https://www.git-tower.com/blog/command-line-cheat-sheet/)is 
+    - [https://www.git-tower.com/blog/command-line-cheat-sheet/](https://www.git-tower.com/blog/command-line-cheat-sheet/)is 
+
+- Git Cheat sheet: 
+    - [https://www.git-tower.com/blog/git-cheat-sheet](https://www.git-tower.com/blog/git-cheat-sheet)
+
+- Happy Git with R: makes things very easy if using from RStudio:     
+    - [http://happygitwithr.com/](http://happygitwithr.com/)
+
+- Noam's reproducibility document:
+    - [https://github.com/ecohealthalliance/eha-reproducibility](https://github.com/ecohealthalliance/eha-reproducibility)
+
 
 # Questions? 
