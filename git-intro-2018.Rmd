@@ -1,42 +1,55 @@
 ---
 title: "Intro to Git"
-author: "EHA Behavioral Risk Team" 
-date: October 25, 2017
+author: "EcoHealth Alliance Data Science Training" 
+date: June 13, 2018
 output:
   xaringan::moon_reader:
     css: ["default", "eha.css"]
     lib_dir: libs
     nature: 
-      highlightLines: true 
+      highlight: tango 
       countIncrementalSlides: false
     fig_height: 7
     fig_width: 7
+    
 ---
 
-<style>
-div#before-column p.forceBreak {
-    break-before: column;
-}
-div#after-column p.forceBreak {
-    break-after: column;
-}
-</style>
+## Goals of the session 
 
-<!--- <style type="text/css">
-body p {
-  color: #000000;
-}
-</style>
----> 
+1. Understand why git and Github are used 
+
+--
+
+2. Get familiar with the 4-7 git verbs that will make up >95% of your git use, and practice with the command line and the Rstudio git interface.
+
+--
+
+3. Know how to find help - be familiar with this doc as a reference, and be familiar with the terminology so you know what to Google when you get stuck 
+
+--
+
+4. Develop generous habits toward your teammates and, more importantly, toward your future self 
+
+---
+
+layout: inverse 
+background-image: url(https://i.imgur.com/GVJ06OK.jpg)
+
+---
+
+layout: false
 
 ## Why Use Git? 
 - For **version control** 
     - track changes in code 
     - revert to old versions when you commit a terrible error
+--
 - To avoid this: 
 <center>
 <img src="figs/filenames.gif", width = 462, height = 372></img>
 </center>
+
+---
 
 ## Why Use Github?
 
@@ -48,92 +61,132 @@ body p {
 <img src="figs/gitflow.png", width = 605, height = 370>
 </center>
 
+---
+
 ## Barriers to entry 
 
-- You (and your team) already have a versioning system already set up.
+--
+- You (and your team/supervisor) already have a versioning system already set up.
+--
 
-- You typically work on analyses (or large chunks of analyses) by yourself. 
+- You typically work on analyses by yourself. 
+--
 
 - Git co-opts regular words (fork, tree, push, commit) and assigns them *extremely* Git-specific definitions that are tremendously easy to confuse until you get the hang of it. 
 
+---
 
 ## Getting Started: register on Github.com 
 
-- Use your work email address (you can add a personal one later if you like) and register for a *public* (free) account 
+- Register for a *public* (free) account 
 
-- Send your Github username to Noam [ross@ecohealthalliance.org](ross@ecohealthalliance.org) or Toph [allen@ecohealthalliance.org](allen@ecohealthalliance.org) so they can add you to the EHA organizational Github 
+- Send your Github username to Noam [ross@ecohealthalliance.org](ross@ecohealthalliance.org) or Toph [allen@ecohealthalliance.org](allen@ecohealthalliance.org) so they can add you to the EHA organizational Github and give you read access to private repos
 
-- EHA-hosted files can be PRIVATE to the organization. Any data or code that you host on your personal Github.com site will be public. 
+- EHA-hosted files can be PRIVATE to the organization. Any data or code that you host on your personal Github will be public. 
 
-## Git terminology {.columns-2}
-
-- `tree`: a directory or folder of files. trees can have multiple branches.
-- `branch`: a version of the tree. You can make a new branch if you want to test out changes in a file, but don’t want to alter the original.  
-- `master` or `master branch`: the trunk of the tree. 
-
-<br>
-
-<p class="forceBreak"></p>
-
-
-
-<img src="figs/gittree.png", width = 300, height 390></img>
-
-
+---
 
 ## Git terminology 
+
+.pull-left[
+
+- `tree`: a directory or folder of files. trees can have multiple branches.
+
+- `branch`: a version of the tree. You can make a new branch if you want to test out changes in a file, but don’t want to alter the original.  
+
+- `master` or `master branch`: the trunk of the tree. 
+]
+
+.pull-right[
+
+<img src="figs/gittree.png", width = 300, height 390></img>
+]
+
+---
+
+## Git terminology 
+
 - `repo` or `repository`: a file directory hosted on Github. This should include everything you need for a project - raw data, code/scripts, intermediate files, etc. 
+
 - `remote`: an external place that holds your tree. For us, the remote will be a path to a Github repo, e.g. [https://github.com/brooke-watson/intro-to-git](https://github.com/brooke-watson/intro-to-git)
-- `origin`: The default upstream branch. 
 
-## Git verbs  {.smaller .columns-2}
+- `origin`: The default name of the remote.
 
+---
+
+## Git verbs 
+
+- `git init` initializes a git repo from the command line *inside* a folder. 
+
+--
+
+- Alternately, you can initialize a git repo when you start a new project in R Studio. 
+
+![](figs/git-init-Rstudio.png)
+
+---
+
+## Git verbs 
+
+.pull-left[
 ### On the way down: 
-- `fork`: copy someone else's remote to your remote 
-- `clone`: copy a remote onto your computer 
-- `fetch`: update your clone from a remote that already exists
-- `pull`: fetch updates + check them out into your working directory 
-    - if there are any conflicts between the remote and your local repository, pull will prompt you to `merge` 
 
-<p class="forceBreak"></p>
+- `fork`: copy someone else's remote to your remote 
+
+- **`clone`: copy a remote onto your computer**
+
+- `fetch`: update your clone from a remote that already exists
+
+- **`pull`: fetch updates + check them out into your working directory** 
+
+- `merge`: resolve conflicts between the remote and your local repository 
+]
+
+--
+
+.pull-right[
 
 ### On the way up:
-- `add` or `stage`: get your changes ready to be saved 
-- `commit`: save a record to your repository. A commit is basically a super-save.
-- `push`: copy that record from your repository (your local computer) to your remote (Github)
 
-<br>
-<br>
+- **`add` or `stage`: get your changes ready to be saved**
+
+- **`commit`: save a record to your repository. A commit is basically a super-save.**
+
+- **`push`: copy that record from your repository (your local computer) to your remote (Github)**
+]
+
+---
 
 ## Git structure 
 
 <img src="figs/diagram.svg", width = 700, height = 200></img>
 
-- Remote = Github 
+- Remote = Github
 - Repository = Git = your local record of `commit`ted saves 
 - Workspace = The regular-degular-schmegular files you work on. 
 - Index = Staging area where you can look at the changes you've made before you commit them. (R Studio has a nice GUI for looking at `git diff`s).
 
+---
+
 # Practice! 
 
-## First things first: find the command line {.smaller .columns-2}
+---
 
+## First things first: find the command line
+
+.pull-left[
 - In Mac: `cmnd` + `space`, type "terminal", hit Enter
 
 
 <img src="figs/terminal1.png", width = 373, height = 172, border = 1></img>
+]
 
-<br>
-<p class="forceBreak"></p>
-<br>
-<br>
-
-- In Windows: open the start menu and type "cmd" or "command." Click the Command Prompt. 
-
-<img src="figs/win-cmd.png", width = 340, height = 245></img>
+.pull-right[
+- In Windows: open the start menu and find "git bash."
+]
 
 
-</center>
+---
 
 ## Navigate the command line to where you want it
 
@@ -141,6 +194,8 @@ body p {
 - typing `pwd` at the command line `p`rints your `w`orking `d`irectory 
 - `cd <path>` `c`hanges your working `d`irectory to `<path>`
 - When you `clone` the git repository, git will download all the files in that repo into your current working directory - basically copying that folder into your home computer 
+
+---
 
 ## Fork someone else's repo 
 
@@ -151,6 +206,8 @@ body p {
 - Forks of private repos *stay private.*
 - Fork [https://github.com/brooke-watson/intro-to-git.](https://github.com/brooke-watson/intro-to-git) now. 
 
+---
+
 ## Clone a repo 
 
 - Go to YOUR copy of the repo: [https://github.com/YOUR-USERNAME/intro-to-git](https://github.com/YOUR-USERNAME/intro-to-git). 
@@ -160,6 +217,7 @@ body p {
 - Your files are there! 
 - `cd intro-to-git` to get inside the folder
 
+---
 
 ## Check status and create a branch 
 
@@ -169,6 +227,8 @@ body p {
 	- `git checkout -b <branch_name>` 
 	- EX: `git checkout -b myname-branch`
 	- `git status`
+
+---
 
 ## Make a change and check your status 
 
@@ -182,6 +242,8 @@ body p {
         
 - `git status` again to see your changes. 
 
+---
+
 ## Make a change and check your status 
 
 You should see something like this: 
@@ -190,16 +252,22 @@ You should see something like this:
 
 <br>
 
+---
+
 ## Pause because really: what a good wholesome gif.
 
 ![](figs/dwight-howard-cookie-challenge.gif)
+
+---
 
 ## Add (stage) changes and look at the differences 
 
 - Add file to changes that you want to “stage”: `git add <filename>` 
     - e.g. (`git add 'figs/dwight-howard-cookie-challenge.gif'`)
 	- Sometimes you might use `git add . ` to add ALL untracked files - use with caution!! 
-	- can also use `git add *.Rmd` to add all the .Rmd files, for example 
+	- can also use `git add *.Rmd` to add all the .Rmd files, for example
+	
+---
 
 ## Git diff 
 - `git diff —-cached` to see your changes 
@@ -207,11 +275,14 @@ You should see something like this:
 - RStudio has a great one 
 - [happygitwithr.com/](happygitwithr.com) is very helpful if/when you want to use Git/Github from within RSTudio 
     - Highly recommend if you are using R!! 
-    
+
+---
+
 ## Rstudio git diff GUI 
 
 <img src="figs/gitdiff.png", width = 700, height = 521></img>
 
+---
 
 ## Commit your changes:
 
@@ -221,12 +292,16 @@ You should see something like this:
 
 <br>
 
+---
+
 ## Push changes to Github 
 - Check your remote: `git remote -v` (if you started by cloning a repo from GitHub, your origin should already be set)
 - Push your changes to the remote server: `git push <remote-name> <your-branch>` 
 	- e.g. `git push origin myname-branch`
 	- Check [github.com/YOUR-USERNAME/intro-to-git](github.com/YOUR-USERNAME/intro-to-git) to check that your changes are there 
 	- You did it! 
+
+---
 	
 ## Submit a pull request (PR)
 
@@ -235,23 +310,29 @@ You should see something like this:
 - Edit your message and click submit. Now you should see your pull request show up in the pull requests tab!
     - In a real project your PR may be discussed and reviewed. Stakeholders may suggest changes or updates and (hopefully) eventually your code will be merged!
 
+---
 
 # Tips 
 
-## Don't accidentally make (y)our private research data public! {.columns-2}
+---
 
+## Don't accidentally make (y)our private research data public! 
+
+.pull-left[
 ### Start Here 
 <img src="figs/new-github.png", width = 375, height = 250, border = 1></img>
+]
 
-<br><br>
-
-
+.pull-right[
 ### Not here
 <img src="figs/no-github.png", width = 375, height = 250></img>
-<br>
+
   
 ... when creating a new repository. 
-  
+]
+
+---
+
 ## Tips 
 
 - When you get stuck, do your Googles.
@@ -260,9 +341,14 @@ You should see something like this:
 - If you get really stuck, save your folder in a new location, delete the whole thing, and re-clone from Github.
     - This is the Github equivalent of "turning it off and turning it back on."  
 
-## Don't forget the Golden Rule
+---
+
+## If you get confused, you're not alone
+
 <center>
 ![](figs/git-xkcd.png)
+
+---
 
 ## Resources 
 
@@ -278,5 +364,6 @@ You should see something like this:
 - Noam's reproducibility document:
     - [https://github.com/ecohealthalliance/eha-reproducibility](https://github.com/ecohealthalliance/eha-reproducibility)
 
+---
 
 # Questions? 
