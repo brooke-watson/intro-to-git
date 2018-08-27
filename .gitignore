@@ -1,18 +1,12 @@
+# secret data  
+/data/
+
 # History files
 .Rhistory
 .Rapp.history
 
 # Session Data files
 .RData
-
-# Example code in package build process
-*-Ex.R
-
-# Output files from R CMD build
-/*.tar.gz
-
-# Output files from R CMD check
-/*.Rcheck/
 
 # RStudio files
 .Rproj.user/
@@ -35,3 +29,10 @@ vignettes/*.pdf
 # MACOS DS_Store
 *.DS_Store
 .Rproj.user
+
+# Output files from R CMD build
+/*.tar.gz
+
+# Output files from R CMD check
+/*.Rcheck/
+

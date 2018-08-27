@@ -1,0 +1,194 @@
+---
+title: "Git 2: Back in the Habit"
+author: "ACLU Data + Analytics" 
+date: August 27, 2018
+output:
+  xaringan::moon_reader:
+    css: ["aclu2.css"]
+    lib_dir: libs
+    nature: 
+      highlight: tango
+      countIncrementalSlides: true
+    fig_height: 7
+    fig_width: 7
+    
+---
+
+## Last time 
+
+--
+
+1. Understand what version control is, and how it can save you and your team time and frustration. 
+
+--
+
+2. Get familiar with the basics of git and Github, and understand how and why they can become a key part of your workflow.
+
+--
+
+3. Learn basic terminology 
+
+--
+
+4. Practice! 
+
+    - Cloning repos from Github 
+    - Initializing a new git repo 
+    - Pulling changes *from* Github 
+    - Pushing changes *to* Github 
+
+---
+
+## This time 
+
+1. Using git and Github to collaborate 
+
+    - Branching 
+    - Checking out 
+    - Pull requests 
+
+--
+
+2. Using Github to maintain good code practices 
+
+    a. Github Issue tracking 
+
+    b. Code review and pull requests 
+
+--
+
+3. Git and Github best practices + tips and tricks 
+
+    - .gitignore files 
+    - README 
+    - project trees 
+
+---
+
+
+## Git terminology 
+
+_n(ew terms in bold)_
+
+.pull-left[
+
+- `tree`: a directory or folder of files. trees can have multiple branches.
+
+- **`branch`: a version of the tree. You can make a new branch if you want to test out changes in a file, but don’t want to alter the original.**  
+
+- `master` or `master branch`: the trunk of the tree. 
+]
+
+---
+
+## Create a branch 
+
+- Check your status with `git status`
+    - Should see `"On Branch Master" "Your branch is up-to-date with 'origin/master’"`
+- Create and checkout a branch to work from: 
+	- `git checkout -b <branch_name>` 
+	- EX: `git checkout -b myname-branch`
+	- `git status`
+
+---
+
+
+## Git diff 
+
+- `git diff —-cached` to see your changes 
+- It's easier to use a GUI to do this 
+- RStudio has a great one 
+- [happygitwithr.com/](happygitwithr.com) is very helpful if/when you want to use Git/Github from within RSTudio 
+    - Highly recommend if you are using R!! 
+
+---
+
+## Push branch changes to Github 
+
+- Check your remote: `git remote -v` (if you started by cloning a repo from GitHub, your origin should already be set)
+- Push your changes to the remote server: `git push <remote-name> <your-branch>` 
+	- e.g. `git push origin myname-branch`
+
+---
+
+## Merge branch changes
+
+---
+	
+## Submit a pull request (PR)
+
+- Open the repo in GitHub and select your branch
+- You should see *"compare and pull request"*. This will bring up a summary of your changes and show you what branch you are merging.
+- Edit your message and click submit. Now you should see your pull request show up in the pull requests tab!
+    - In a real project your PR may be discussed and reviewed. Stakeholders may suggest changes or updates and (hopefully) eventually your code will be merged!
+
+---
+
+# Tips 
+
+---
+
+## .gitignore
+
+
+.pull-left[
+
+.gitignore file = everything you don't want to be pushed to a public website
+
+This should include: 
+
+- any private or confidential data, **especially** PII 
+
+- config files with API keys and passwords 
+
+- Excessive intermediate files or annoying hidden files (e.g. .Rproj/user)
+
+]
+
+.pull-right[
+
+![](figs/gitignore.png)
+
+]
+
+--- 
+
+## Issue tracking 
+
+
+
+---
+
+## Practical Tips 
+
+- If you are using R, initialize new git repos from within R Studio.
+- If you get really stuck, save your folder in a new location, delete the whole thing, and re-clone from Github.
+    - This is the Github equivalent of "turning it off and turning it back on."  
+- Always `git pull` before committing and pushing.
+- If you do things in the right order, most of what you want to accomplish can be done with about 7 commands (`clone, pull, checkout, status, add, commit, push`). 
+ 
+---
+
+## If you get confused, you're not alone
+
+<center>
+![](figs/git-xkcd.png)
+
+---
+
+## Resources 
+
+- Command line cheat sheet: 
+    - [https://www.git-tower.com/blog/command-line-cheat-sheet/](https://www.git-tower.com/blog/command-line-cheat-sheet/)is 
+
+- Git Cheat sheet: 
+    - [https://www.git-tower.com/blog/git-cheat-sheet](https://www.git-tower.com/blog/git-cheat-sheet)
+
+- Happy Git with R: makes things very easy if using from RStudio:     
+    - [http://happygitwithr.com/](http://happygitwithr.com/)
+
+---
+
+# Questions? 
+
+??? 
